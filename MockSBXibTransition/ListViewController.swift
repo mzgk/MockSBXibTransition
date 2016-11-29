@@ -1,5 +1,5 @@
 //
-//  InputViewController.swift
+//  ListViewController.swift
 //  MockSBXibTransition
 //
 //  Created by mzgk on 2016/11/29.
@@ -8,12 +8,12 @@
 
 import UIKit
 
-class InputViewController: UIViewController {
+class ListViewController: UIViewController {
 
-    @IBOutlet weak var inputLabel: UILabel!
+    @IBOutlet weak var listLabel: UILabel!
 
     override func loadView() {
-        if let view = UINib(nibName: "Input", bundle: nil).instantiate(withOwner: self, options: nil).first as? UIView {
+        if let view = UINib(nibName: "List", bundle: nil).instantiate(withOwner: self, options: nil).first as? UIView {
             self.view = view
         }
     }
