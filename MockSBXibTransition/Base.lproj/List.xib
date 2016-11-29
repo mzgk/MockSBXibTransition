@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ListViewController" customModule="MockSBXibTransition" customModuleProvider="target">
             <connections>
+                <outlet property="dismissButton" destination="2cJ-da-6p2" id="N3h-mi-xQv"/>
                 <outlet property="listLabel" destination="nt6-HH-lyj" id="6Zf-c8-b7s"/>
             </connections>
         </placeholder>
@@ -42,10 +43,23 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IwK-Xc-UbU">
+                    <rect key="frame" x="37.5" y="347" width="300" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="0GM-el-gaU"/>
+                        <constraint firstAttribute="width" constant="300" id="bEm-eM-raz"/>
+                    </constraints>
+                    <state key="normal" title="Input Modal"/>
+                    <connections>
+                        <action selector="buttonInputModalTapped:" destination="-1" eventType="touchUpInside" id="XOf-yo-ADH"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="0.1019607843" green="0.73725490199999999" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="nt6-HH-lyj" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="200" id="7td-tJ-7Ok"/>
+                <constraint firstItem="2cJ-da-6p2" firstAttribute="top" secondItem="IwK-Xc-UbU" secondAttribute="bottom" constant="100" id="BJ8-aa-nb0"/>
+                <constraint firstItem="IwK-Xc-UbU" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Nad-cP-J49"/>
                 <constraint firstItem="2cJ-da-6p2" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="SKV-ar-aoF"/>
                 <constraint firstItem="nt6-HH-lyj" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="dSd-Av-z7E"/>
                 <constraint firstAttribute="bottom" secondItem="2cJ-da-6p2" secondAttribute="bottom" constant="160" id="lMd-UC-9BM"/>

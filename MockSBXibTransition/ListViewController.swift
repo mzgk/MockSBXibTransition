@@ -11,7 +11,12 @@ import UIKit
 class ListViewController: UIViewController {
 
     @IBOutlet weak var listLabel: UILabel!
+    @IBOutlet weak var dismissButton: UIButton!
 
+    var isModal = false
+    var text = "From Tab."
+
+    // 必須
     override func loadView() {
         if let view = UINib(nibName: "List", bundle: nil).instantiate(withOwner: self, options: nil).first as? UIView {
             self.view = view
@@ -22,6 +27,16 @@ class ListViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+
+        // 閉じるボタンの制御
+        if isModal {
+            dismissButton.isHidden = false
+        }
+        else {
+            dismissButton.isHidden = true
+        }
+
+        listLabel.text = text
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,8 +44,17 @@ class ListViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func buttonInputModalTapped(_ sender: UIButton) {
+        // Input.xibをModalで表示する
+        let modal = InputViewController(nibName: "Input", bundle: nil)
+        modal.isModal = true
+        modal.text = "From Modal."
+        self.present(modal, animated: true, completion: nil)
+    }
 
     @IBAction func buttonDismissTapped(_ sender: UIButton) {
+        // Modalで来た場合のみ表示されるので、本来はDelegateで実装すること
+        presentingViewController?.dismiss(animated: true, completion: nil)
     }
     /*
     // MARK: - Navigation
